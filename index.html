@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nodirov Ozodbek — Shaxsiy Sahifa</title>
-  <meta name="description" content="Nodirov Odozbekning shaxsiy landing sahifasi: qisqacha bio, kontaktlar, ijtimoiy tarmoqlar." />
+  <meta name="description" content="Nodirov Ozodbek - Frontend dasturchi va kiberxavsizlik mutaxassisi" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
   <style>
     :root {
       --bg-light: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --bg-dark: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+      --bg-dark: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
       --card-light: rgba(255,255,255,0.25);
       --card-dark: rgba(255,255,255,0.08);
       --text-light: #2d3748;
@@ -21,12 +21,13 @@
       --muted-dark: #a0aec0;
       --accent: #00f5ff;
       --accent-2: #0080ff;
+      --cyber-green: #00ff41;
+      --cyber-purple: #b300ff;
       --accent-glow: rgba(0, 245, 255, 0.3);
       --ring: rgba(0, 245, 255, 0.6);
       --shadow-light: 0 20px 60px rgba(0,0,0,0.1);
       --shadow-dark: 0 20px 60px rgba(0,0,0,0.4);
       --radius: 24px;
-      --glass-border: rgba(255,255,255,0.18);
     }
 
     [data-theme="light"] {
@@ -63,7 +64,6 @@
       position: relative;
     }
 
-    /* Animated background particles */
     .particles {
       position: fixed;
       top: 0;
@@ -76,8 +76,8 @@
 
     .particle {
       position: absolute;
-      width: 4px;
-      height: 4px;
+      width: 3px;
+      height: 3px;
       background: var(--accent);
       border-radius: 50%;
       opacity: 0.6;
@@ -92,7 +92,7 @@
     .wrap {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 2rem;
+      padding: 1rem;
       position: relative;
       z-index: 10;
     }
@@ -101,21 +101,23 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
       animation: slideInDown 0.8s ease-out;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.75rem;
     }
 
     .logo {
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 50px;
       background: #1a4d52;
-      border-radius: 16px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -133,7 +135,7 @@
     }
 
     .brand h1 {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       font-weight: 700;
       background: linear-gradient(45deg, var(--accent), var(--accent-2));
       -webkit-background-clip: text;
@@ -161,23 +163,23 @@
     }
 
     .theme-toggle i {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: var(--accent);
       transition: all 0.3s ease;
     }
 
     .hero {
       display: grid;
-      grid-template-columns: 2fr 1fr;
+      grid-template-columns: 1fr;
       gap: 2rem;
-      margin-bottom: 4rem;
+      margin-bottom: 3rem;
     }
 
     .card {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 2.5rem;
+      padding: 2rem;
       box-shadow: var(--shadow);
       backdrop-filter: blur(20px);
       position: relative;
@@ -198,16 +200,17 @@
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-3px);
       box-shadow: 0 30px 80px rgba(0,0,0,0.2);
     }
 
     .main-card {
       animation: slideInLeft 0.8s ease-out;
+      text-align: center;
     }
 
     .title {
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: 900;
       margin-bottom: 1rem;
       line-height: 1.1;
@@ -228,69 +231,89 @@
 
     .subtitle {
       color: var(--muted);
-      font-size: 1.1rem;
+      font-size: 1rem;
       margin-bottom: 2rem;
       font-weight: 400;
       line-height: 1.7;
       animation: fadeInUp 1s ease-out 0.3s both;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin: 2rem 0;
-    }
-
-    .skill {
-      padding: 0.75rem 1.25rem;
-      background: linear-gradient(45deg, var(--accent), var(--accent-2));
-      color: white;
-      border-radius: 50px;
-      font-size: 0.9rem;
-      font-weight: 600;
+    /* Cyber Security Avatar */
+    .cyber-avatar {
+      width: 200px;
+      height: 200px;
+      margin: 2rem auto;
       position: relative;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #0a0a0a, #1a1a2e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       overflow: hidden;
-      transition: all 0.3s ease;
-      animation: skillPop 0.6s ease-out backwards;
+      animation: cyberFloat 3s ease-in-out infinite;
     }
 
-    .skill:nth-child(1) { animation-delay: 0.1s; }
-    .skill:nth-child(2) { animation-delay: 0.2s; }
-    .skill:nth-child(3) { animation-delay: 0.3s; }
-    .skill:nth-child(4) { animation-delay: 0.4s; }
-    .skill:nth-child(5) { animation-delay: 0.5s; }
-
-    .skill::before {
+    .cyber-avatar::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: -100%;
+      inset: -3px;
+      background: linear-gradient(45deg, var(--cyber-green), var(--accent), var(--cyber-purple));
+      border-radius: 50%;
+      z-index: -1;
+      animation: rotate 4s linear infinite;
+    }
+
+    .cyber-content {
+      position: relative;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-      transition: all 0.5s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--cyber-green);
     }
 
-    .skill:hover {
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 15px 35px var(--accent-glow);
+    .cyber-shield {
+      font-size: 4rem;
+      margin-bottom: 0.5rem;
+      animation: pulse 2s ease-in-out infinite;
     }
 
-    .skill:hover::before {
-      left: 100%;
+    .cyber-text {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.9;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    .cyber-scan {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--cyber-green), transparent);
+      animation: scan 3s ease-in-out infinite;
     }
 
     .actions {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1rem;
       animation: fadeInUp 1s ease-out 0.6s both;
+      margin-top: 2rem;
     }
 
     .action {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 0.75rem;
       padding: 1rem 1.5rem;
       background: var(--card);
@@ -303,6 +326,7 @@
       backdrop-filter: blur(10px);
       position: relative;
       overflow: hidden;
+      text-align: center;
     }
 
     .action::before {
@@ -337,152 +361,150 @@
       transform: scale(1.2);
     }
 
-    .avatar-card {
-      animation: slideInRight 0.8s ease-out;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .avatar {
-      width: 100%;
-      max-width: 300px;
-      aspect-ratio: 1;
-      border-radius: var(--radius);
-      background: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAyADIDASIAAhEBAxEB/8QAHAAAAwADAQEAAAAAAAAAAAAAAAcFBggBAwT/xAArEAACAQMDAgYDAQEBAAAAAAABAgADBBESITEFBhMiQVFhcYGRobHwMsH/xAAZAQADAQEBAAAAAAAAAAAAAAAABAUDAQL/xAAkEQABAwMEAwADAAAAAAAAAAABAAIDBAURMSFREkFhE4GBkf/aAAwDAQACEQMRAD8AuqIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAJ//Z") center/cover;
-      position: relative;
-      animation: avatarFloat 3s ease-in-out infinite;
-      border: 3px solid var(--accent);
-    }
-
-    .avatar::before {
-      content: '';
-      position: absolute;
-      inset: -2px;
-      background: linear-gradient(45deg, var(--accent), var(--accent-2), var(--accent));
-      border-radius: var(--radius);
-      z-index: -1;
-      animation: rotate 4s linear infinite;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin: 3rem 0;
-    }
-
-    .stat-card {
-      animation: fadeInUp 0.8s ease-out backwards;
-      text-align: center;
-    }
-
-    .stat-card:nth-child(1) { animation-delay: 0.1s; }
-    .stat-card:nth-child(2) { animation-delay: 0.2s; }
-    .stat-card:nth-child(3) { animation-delay: 0.3s; }
-
-    .stat-number {
-      font-size: 2.5rem;
-      font-weight: 900;
-      color: var(--accent);
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-
-    .stat-label {
-      color: var(--muted);
-      font-weight: 500;
-    }
-
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 2rem 1rem;
       color: var(--muted);
       font-size: 0.9rem;
       border-top: 1px solid var(--border);
-      margin-top: 4rem;
+      margin-top: 3rem;
       animation: fadeIn 1s ease-out 1s both;
     }
 
-    /* Responsive Design */
+    /* Mobile Optimizations */
     @media (max-width: 768px) {
       .wrap {
-        padding: 1rem;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        padding: 0.75rem;
       }
 
       .nav {
         flex-direction: column;
-        gap: 1rem;
         text-align: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .brand h1 {
+        font-size: 1.1rem;
+      }
+
+      .logo {
+        width: 45px;
+        height: 45px;
       }
 
       .title {
-        font-size: 2.5rem;
+        font-size: 2rem;
+      }
+
+      .subtitle {
+        font-size: 0.95rem;
+        padding: 0 0.5rem;
       }
 
       .card {
         padding: 1.5rem;
       }
 
+      .cyber-avatar {
+        width: 160px;
+        height: 160px;
+      }
+
+      .cyber-shield {
+        font-size: 3rem;
+      }
+
       .actions {
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
       }
 
       .action {
-        justify-content: center;
+        padding: 0.9rem 1rem;
+        font-size: 0.9rem;
+      }
+
+      .particles {
+        display: none; /* Hide particles on mobile for better performance */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .wrap {
+        padding: 0.5rem;
+      }
+
+      .title {
+        font-size: 1.8rem;
+      }
+
+      .subtitle {
+        font-size: 0.9rem;
+      }
+
+      .card {
+        padding: 1.25rem;
+      }
+
+      .cyber-avatar {
+        width: 140px;
+        height: 140px;
+      }
+
+      .cyber-shield {
+        font-size: 2.5rem;
+      }
+
+      .cyber-text {
+        font-size: 0.7rem;
+      }
+
+      .action {
+        padding: 0.8rem;
+        font-size: 0.85rem;
+      }
+    }
+
+    /* Desktop larger screens */
+    @media (min-width: 1024px) {
+      .hero {
+        grid-template-columns: 2fr 1fr;
+        align-items: center;
+      }
+
+      .main-card {
+        text-align: left;
+      }
+
+      .subtitle {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .cyber-avatar {
+        margin: 0 auto;
+      }
+
+      .actions {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
     /* Animations */
     @keyframes slideInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes slideInRight {
-      from {
-        opacity: 0;
-        transform: translateX(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
     }
 
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes fadeIn {
@@ -491,82 +513,49 @@
     }
 
     @keyframes logoSpin {
-      from {
-        opacity: 0;
-        transform: rotate(-180deg) scale(0.5);
-      }
-      to {
-        opacity: 1;
-        transform: rotate(0deg) scale(1);
-      }
-    }
-
-    @keyframes skillPop {
-      from {
-        opacity: 0;
-        transform: scale(0.7) translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-      }
+      from { opacity: 0; transform: rotate(-180deg) scale(0.5); }
+      to { opacity: 1; transform: rotate(0deg) scale(1); }
     }
 
     @keyframes titleGlow {
-      from {
-        text-shadow: 0 0 20px var(--accent-glow);
-      }
-      to {
-        text-shadow: 0 0 30px var(--accent-glow), 0 0 40px var(--accent-glow);
-      }
+      from { text-shadow: 0 0 20px var(--accent-glow); }
+      to { text-shadow: 0 0 30px var(--accent-glow), 0 0 40px var(--accent-glow); }
     }
 
     @keyframes gradientShift {
-      0%, 100% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
     }
 
-    @keyframes avatarFloat {
-      0%, 100% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
+    @keyframes cyberFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
     }
 
     @keyframes rotate {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
 
     @keyframes slideIn {
-      from {
-        transform: translateX(-100%);
-      }
-      to {
-        transform: translateX(0);
-      }
+      from { transform: translateX(-100%); }
+      to { transform: translateX(0); }
     }
 
-    /* Scroll animations */
-    .reveal {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.6s ease;
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.8; }
     }
 
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
+    @keyframes glow {
+      from { text-shadow: 0 0 10px var(--cyber-green); }
+      to { text-shadow: 0 0 20px var(--cyber-green), 0 0 30px var(--cyber-green); }
+    }
+
+    @keyframes scan {
+      0% { top: 0%; opacity: 0; }
+      50% { opacity: 1; }
+      100% { top: 100%; opacity: 0; }
     }
   </style>
 </head>
@@ -577,7 +566,7 @@
   <div class="wrap">
     <nav class="nav">
       <div class="brand">
-        <div class="logo">NO</div>
+        <div class="logo"></div>
         <h1>Nodirov Ozodbek</h1>
       </div>
       <button class="theme-toggle" id="themeToggle">
@@ -610,8 +599,14 @@
         </div>
       </div>
 
-      <div class="card avatar-card">
-        <div class="avatar"></div>
+      <div class="card">
+        <div class="cyber-avatar">
+          <div class="cyber-scan"></div>
+          <div class="cyber-content">
+            <i class="fas fa-shield-alt cyber-shield"></i>
+            <div class="cyber-text">Secure</div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -642,10 +637,12 @@
     body.setAttribute('data-theme', savedTheme);
     themeIcon.className = savedTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
 
-    // Create particles
+    // Create particles (only on desktop)
     function createParticles() {
+      if (window.innerWidth <= 768) return; // Skip on mobile
+      
       const particles = document.getElementById('particles');
-      const particleCount = 50;
+      const particleCount = 30;
 
       for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
@@ -658,80 +655,38 @@
       }
     }
 
-    // Animated counter
-    function animateCounters() {
-      const counters = document.querySelectorAll('.stat-number');
-      
-      counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-target'));
-        const duration = 2000;
-        const step = target / (duration / 16);
-        let current = 0;
-
-        const timer = setInterval(() => {
-          current += step;
-          counter.textContent = Math.floor(current);
-          
-          if (current >= target) {
-            counter.textContent = target;
-            clearInterval(timer);
-          }
-        }, 16);
-      });
-    }
-
-    // Scroll reveal
-    function revealOnScroll() {
-      const reveals = document.querySelectorAll('.reveal');
-      
-      reveals.forEach(element => {
-        const windowHeight = window.innerHeight;
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementTop < windowHeight - elementVisible) {
-          element.classList.add('active');
-        }
-      });
-    }
-
     // Initialize
     document.addEventListener('DOMContentLoaded', () => {
       createParticles();
       document.getElementById('year').textContent = new Date().getFullYear();
-      
-      // Start counter animation when stats are visible
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            animateCounters();
-            observer.unobserve(entry.target);
-          }
-        });
-      });
+    });
 
-      const statsSection = document.querySelector('.stats');
-      if (statsSection) {
-        observer.observe(statsSection);
+    // Responsive particles management
+    window.addEventListener('resize', () => {
+      const particles = document.getElementById('particles');
+      if (window.innerWidth <= 768) {
+        particles.innerHTML = '';
+      } else if (particles.children.length === 0) {
+        createParticles();
       }
     });
 
-    window.addEventListener('scroll', revealOnScroll);
+    // Interactive effects (only on desktop)
+    if (window.innerWidth > 768) {
+      document.addEventListener('mousemove', (e) => {
+        const particles = document.querySelectorAll('.particle');
+        const mouseX = e.clientX / window.innerWidth;
+        const mouseY = e.clientY / window.innerHeight;
 
-    // Add some interactive effects
-    document.addEventListener('mousemove', (e) => {
-      const particles = document.querySelectorAll('.particle');
-      const mouseX = e.clientX / window.innerWidth;
-      const mouseY = e.clientY / window.innerHeight;
-
-      particles.forEach((particle, index) => {
-        const speed = (index % 5 + 1) * 0.5;
-        const x = (mouseX - 0.5) * speed;
-        const y = (mouseY - 0.5) * speed;
-        
-        particle.style.transform = `translate(${x}px, ${y}px)`;
+        particles.forEach((particle, index) => {
+          const speed = (index % 5 + 1) * 0.5;
+          const x = (mouseX - 0.5) * speed;
+          const y = (mouseY - 0.5) * speed;
+          
+          particle.style.transform = `translate(${x}px, ${y}px)`;
+        });
       });
-    });
+    }
   </script>
 </body>
 </html>
