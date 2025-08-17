@@ -75,11 +75,11 @@ body {
 .logo {
   width: 55px;
   height: 55px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 8px 32px var(--accent-glow);
+  border-radius: 50%;       /* dumaloq shakl qiladi */
+  object-fit: cover;        /* rasm dumaloq shakl ichida to‘liq sig‘adi */
+  box-shadow: 0 8px 32px var(--accent-glow); /* tashqi yorqin effekt */
+  display: block;           /* qo‘shimcha tekislik uchun */
 }
-
 .brand h1 {
   font-size: 1.25rem;
   font-weight: 700;
